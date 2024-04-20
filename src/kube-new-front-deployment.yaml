@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert
+    kompose.version: 1.22.0 (955b78124)
+  creationTimestamp: null
+  labels:
+    io.kompose.service: kube-new-front
+  name: kube-new-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: kube-new-front
+  strategy: {}
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert
+        kompose.version: 1.22.0 (955b78124)
+      creationTimestamp: null
+      labels:
+        io.kompose.network/kube_news_network: "true"
+        io.kompose.service: kube-new-front
+    spec:
+      containers:
+        - env:
+            - name: DB_DATABASE
+            - name: DB_HOST
+              value: postgre
+            - name: DB_PASSWORD
+            - name: DB_USERNAME
+          image: giovannipajeu/kube-dev-news:v1
+          name: front-end
+          ports:
+            - containerPort: 8080
+          resources: {}
+      restartPolicy: Always
+status: {}
