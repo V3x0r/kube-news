@@ -43,4 +43,4 @@ jobs:
        with:
         images: giovannipajeu/kube-dev-news:${{github.run_number}}
         manifests: |
-         ./src/deployment.yaml
+         ./src/kubernetes/
