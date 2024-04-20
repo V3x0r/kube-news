@@ -23,6 +23,6 @@ jobs:
         file: ./src/Dockerfile
         push: true
         tags: |
-              giovannipajeu/kube-dev-news:{{github.run_number}}
-              giovannipajeu/kube-dev-news:latest       
+          giovannipajeu/kube-dev-news:${{github.run_number}}
+          giovannipajeu/kube-dev-news:latest       
      
