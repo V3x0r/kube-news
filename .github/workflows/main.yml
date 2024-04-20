@@ -22,6 +22,6 @@ jobs:
         context: ./src
         file: ./src/Dockerfile
         pull: true
-        tags: giovanniplima/kube-dev-news:v1
-              giovanniplima/kube-dev-news:latest       
+        tags: giovannipajeu/kube-dev-news:v1
+              giovannipajeu/kube-dev-news:latest       
      
