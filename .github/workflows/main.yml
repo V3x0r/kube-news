@@ -21,7 +21,7 @@ jobs:
        with:
         context: ./src
         file: ./src/Dockerfile
-        pull: true
+        push: true
         tags: |
               giovannipajeu/kube-dev-news:{{github.run_number}}
               giovannipajeu/kube-dev-news:latest       
